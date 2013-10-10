@@ -34,35 +34,49 @@ if __name__ == "__main__":
     print '\n' + 'Time to play Dominion' + '\n' + '\n' + 'Which expansion would you like to use?' + '\n' + "    Dominion" + '\n' + "    Intrigue" + '\n' + "    Seaside" + '\n' + "    Alchemy" + '\n' + "    Prosperity" + '\n' + "    Cornucopia" + '\n' + "    Hinterlands" + '\n' + "    Dark Ages"
     print
 
-    while True:
-        deck = raw_input()
-        deck = deck.lower()
-        deck = deck.replace(' ', '')
-
-        if deck == 'dominion':
-            break
-
-        elif deck == 'intrigue':
-            break
-
-        elif deck == 'alchemy':
-            break
-
-        elif deck == 'prosperity':
-            break
-
-        elif deck == 'cornucopia':
-            break
-
-        elif deck == 'hinterlands':
-            break
-
-        elif deck == 'darkages':
-            break
-
+    while not True:
+        validDeck = [('dominion', 'intrigue', 'seaside', 'alchemy', 'prosperity', 'cornucopia', 'hinterlands', 'darkages')]
+        deckInput = raw_input()
+        deckInput = deck.lower()
+        deckInput = deck.replace(' ', '')
+        if deckInput == validDeck:
+            return True
         else:
-            print "Try that again."
-            print
+            print "try again"
+            return False
+
+    # while True:
+    #     deck = raw_input()
+    #     deck = deck.lower()
+    #     deck = deck.replace(' ', '')
+
+    #     if deck == 'dominion':
+    #         break
+
+    #     elif deck == 'intrigue':
+    #         break
+
+    #     elif deck == 'seaside':
+    #         break
+
+    #     elif deck == 'alchemy':
+    #         break
+
+    #     elif deck == 'prosperity':
+    #         break
+
+    #     elif deck == 'cornucopia':
+    #         break
+
+    #     elif deck == 'hinterlands':
+    #         break
+
+    #     elif deck == 'darkages':
+    #         break
+
+    #     else:
+    #         print "Try that again."
+    #         print
 
 
-    print give10(deck)
+    # print give10(deck)
