@@ -14,8 +14,10 @@ decks = {
     'guilds' : ["Candlestick Maker", "Stonemason", "Doctor", "Masterpiece", "Advisor", "Herald", "Plaza", "Taxman", "Baker", "Butcher", "Journeyman", "Merchant Guild", "Soothsayer"], 
 }
 
-def give10(deckname):
-    unshuffled_list = decks[deckname]
+def give10(*deckname):
+    unshuffled_list = []
+    for deckname in decks:
+        unshuffled_list = unshuffled_list + decks[deckname]
 
     i = 10
 
@@ -31,4 +33,4 @@ def give10(deckname):
 
 if __name__ == "__main__":
 
-    print give10('seaside')
+    print give10('dominion','darkages')
