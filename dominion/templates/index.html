@@ -6,19 +6,17 @@
   </head>
   <body>
       <h1>Welcome to (✿◠‿◠) DOMINION GIRL (◕‿◕✿)</h1>
-      <ul>
-        <li><a href="default.asp">Deck not good enough for you?</a></li>
-        <li><a href="message.asp">Message Dominion Girl~</a></li>
-        </ul>
-        <li><a href="download.asp">Get it on yer phone</a></li>
-        </ul>
       <div class="deck">
         <h2>Give this deck a try:</h2>
         <ul>
         	{% for c in cards %} 
         		<div><li>{{c}}</li></div>
         	{% endfor %}
-        <h3>and these to</h3>
+        </ul>
+      </div>
+      <div class="basicDeck">
+        <h3>+ these dudes</h3>
+        <ul>
           {% for b in basic %}
             <div><li>{{b}}</li></div>
           {% endfor %}

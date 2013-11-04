@@ -30,10 +30,6 @@ div {
 	background-color: deeppink
 }
 
-div {
-	vertical-align: middle;
-}
-
 ul div {
 	position: relative;
 	background-color: tan;

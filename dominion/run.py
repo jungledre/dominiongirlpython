@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for
 
-from dominiongirl import give10, giveBasic,
+print "hi"
+from dominiongirl import give10, giveBasic
 
 app = Flask(__name__)
 
@@ -11,9 +12,8 @@ def hello():
     # return ' '.join(give10('seaside'))
     print ' '.join(giveBasic('seaside'))
     return render_template("index.html",
-        cards = give10('seaside')
-        basic = giveBasic('seaside')
+        cards = give10('seaside'), 
+        basic = giveBasic('seaside'))
 
 if __name__ == "__main__":
     app.debug = True
-    app.run()

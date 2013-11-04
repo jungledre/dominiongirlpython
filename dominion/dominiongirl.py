@@ -14,11 +14,10 @@ decks = {
     'guilds' : ["Candlestick Maker", "Stonemason", "Doctor", "Masterpiece", "Advisor", "Herald", "Plaza", "Taxman", "Baker", "Butcher", "Journeyman", "Merchant Guild", "Soothsayer"], 
 }
 
-supply = {
-    'coin' : ["Copper", "Silver", "Gold", "Platinum"],
-    'victory' : ["Curse", "Estate", "Duchy", "Province", "Colony"],
-    'other' : ["Potion"],
-}
+#Basic cards
+coin = ["Copper", "Silver", "Gold", "Platinum"],
+victory = ["Curse", "Estate", "Duchy", "Province", "Colony"],
+other = ["Potion"],
 
 def give10(*deckname):
     unshuffled_list = []
@@ -38,15 +37,15 @@ def give10(*deckname):
     return shuffled_list
 
 def giveBasic(*deckname):
-    coin_list = coin(0,3)
-    victory_list = victory(0,6)
-    if deckname = 'prosperity':
-        coin_list = coin_list.append(coin(3))
-        victory_list = victory_list.append(victory(6))
+    coin_list = coin[1:3]
+    #victory_list = victory[0:6]
+    if deckname == 'prosperity':
+        coin_list = coin_list.append(coin[3])
+     #   victory_list = victory_list.append(victory[6])
     return coin_list
-    return victory_list
+    #return victory_list
 
 if __name__ == "__main__":
 
     print give10('dominion','seaside')
-    print giveBasic('seaside')
+    print giveBasic('dominion', 'seaside')
