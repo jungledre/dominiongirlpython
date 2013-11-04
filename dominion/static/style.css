@@ -1,0 +1,45 @@
+body {
+	background-color: mediumorchid;
+	font-family: sans-serif;
+	font-color: white;
+	font-size: large;
+	text-align: center;
+}
+
+h1 {
+	color: white;
+	font-size: xx-large;
+}
+
+h2 {
+	color: wheat;
+}
+
+li {
+	color: white;
+	display:inline;
+}
+
+ul {
+	list-style: none;
+	width: 80%;
+	margin: auto;
+}
+
+div {
+	background-color: deeppink
+}
+
+div {
+	vertical-align: middle;
+}
+
+ul div {
+	position: relative;
+	background-color: tan;
+	text-align: bottom;
+	display: inline-block;
+	width: 150px;
+	height: 210px;
+	margin: 10px;
+}

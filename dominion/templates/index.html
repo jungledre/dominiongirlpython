@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Dominion Girl</title>
+  </head>
+  <body>
+      <h1>Welcome to (✿◠‿◠) DOMINION GIRL (◕‿◕✿)</h1>
+      <ul>
+        <li><a href="default.asp">Deck not good enough for you?</a></li>
+        <li><a href="message.asp">Message Dominion Girl~</a></li>
+        </ul>
+        <li><a href="download.asp">Get it on yer phone</a></li>
+        </ul>
+      <div class="deck">
+        <h2>Give this deck a try:</h2>
+        <ul>
+        	{% for c in cards %} 
+        		<div><li>{{c}}</li></div>
+        	{% endfor %}
+        <h3>and these to</h3>
+          {% for b in basic %}
+            <div><li>{{b}}</li></div>
+          {% endfor %}
+        </ul>
+      </div>
+  </body>
+</html>
