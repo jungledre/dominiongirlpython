@@ -2,8 +2,9 @@ body {
 	background-color: mediumorchid;
 	font-family: sans-serif;
 	font-color: white;
-	font-size: large;
+	font-size: medium;
 	text-align: center;
+	vertical-align: middle;
 }
 
 h1 {
@@ -29,13 +30,43 @@ ul {
 div {
 	background-color: deeppink
 }
+.deck {
+	float: left;
+	width: 75%;
+	vertical-align: top;
+}
+.vict {
+	float: right;
+	width: 25%;
+}
 
-ul div {
-	position: relative;
+.coin {
+	float: right;
+	width: 25%;
+}
+.deck div {
 	background-color: tan;
-	text-align: bottom;
+	text-align: center;
 	display: inline-block;
-	width: 150px;
-	height: 210px;
-	margin: 10px;
+	width: 128px;
+	height: 178px;
+	margin: 5px;
+}
+
+.vict div {
+	position: right;
+	background-color: teal;
+	display: inline-block;
+	width: 64px;
+	height: 89px;
+	margin: 5px;
+}
+
+.coin div {
+	position: right;
+	background-color: gold;
+	display: inline-block;
+	width: 64px;
+	height: 89px;
+	margin: 5px;
 }
