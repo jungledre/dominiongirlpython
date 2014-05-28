@@ -14,15 +14,17 @@ decks = {
     'guilds' : ["Candlestick Maker", "Stonemason", "Doctor", "Masterpiece", "Advisor", "Herald", "Plaza", "Taxman", "Baker", "Butcher", "Journeyman", "Merchant Guild", "Soothsayer"], 
 }
 
-#Basic cards
+#Basic Cards
 coin = ["Copper", "Silver", "Gold", "Platinum"]
 vict = ["Estate", "Duchy", "Province", "Colony"]
 other = ["Curse", "Potion"]
 
-def give10(*deckname):
+# 10 Cards
+def give10(decknames):
     unshuffled_list = []
-    for deckname in decks:
-        unshuffled_list = unshuffled_list + decks[deckname]
+
+    for deck in decknames:
+        unshuffled_list = unshuffled_list + decks[deck]
 
     i = 10
 
@@ -36,13 +38,15 @@ def give10(*deckname):
 
     return shuffled_list
 
-def giveCoin(*deckname):
+# Coin Cards
+def giveCoin(deckname):
     coin_list = coin[0:3]
     if deckname == 'prosperity':
         coin_list.append(coin[3])
     return coin_list
 
-def giveVict(*deckname):
+#Victory Cards
+def giveVict(deckname):
     vict_list = vict[0:3]
     if deckname == 'prosperity':
         vict_list.append(vict[3])

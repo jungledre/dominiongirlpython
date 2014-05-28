@@ -15,20 +15,15 @@ h1 {
 h2 {
 	color: wheat;
 }
-
-li {
+h4 {
 	color: white;
-	display:inline;
+	text-align: top;
 }
 
-ul {
-	list-style: none;
-	width: 80%;
-	margin: auto;
 }
 
 div {
-	background-color: deeppink
+	background-color: orchid
 }
 .deck {
 	float: left;
@@ -44,29 +39,36 @@ div {
 	float: right;
 	width: 25%;
 }
-.deck div {
+.decklist div {
 	background-color: tan;
 	text-align: center;
 	display: inline-block;
 	width: 128px;
 	height: 178px;
 	margin: 5px;
+	border-radius: 5px;
 }
 
-.vict div {
+.victlist div {
 	position: right;
 	background-color: teal;
 	display: inline-block;
 	width: 64px;
 	height: 89px;
 	margin: 5px;
+	border-radius: 5px;
 }
 
-.coin div {
+.coinlist div {
 	position: right;
 	background-color: gold;
 	display: inline-block;
 	width: 64px;
 	height: 89px;
 	margin: 5px;
+	border-radius: 5px;
+}
+
+.deckchoice {
+	clear: both;
 }

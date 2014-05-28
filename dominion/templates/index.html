@@ -2,33 +2,64 @@
 <html>
   <head>
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('bower_components', filename='chosen_v1.1.0/chosen.min.css') }}">
     <title>Dominion Girl</title>
+    <script src="{{url_for('bower_components', filename='jquery/dist/jquery.js')}}" type="text/javascript"></script>
+    <script src="{{url_for('bower_components', filename='chosen_v1.1.0/chosen.jquery.min.js')}}" type="text/javascript"></script>
   </head>
   <body>
       <h1>Welcome to (✿◠‿◠) DOMINION GIRL (◕‿◕✿)</h1>
-      <div class="deck">
-        <h2>Give this deck a try:</h2>
-        <ul>
-        	{% for c in cards %} 
-        		<div><li>{{c}}</li></div>
-        	{% endfor %}
-        </ul>
+      <div class="deckname"> 
+          <div><h2>Deck: {{deck}}</h2></div>
       </div>
+<!--deck div -->
+      <div class="deck">
+        <div class="decklist">
+        	{% for c in cards %} 
+        		<div><h4>{{c}}</h4></div>
+        	{% endfor %}
+        </div>
+      </div>
+<!--coin cards -->
       <div class="coin">
         <h3>+ these dudes</h3>
-        <ul>
+        <div class="coinlist">
           {% for b in coin %}
-            <div><li>{{b}}</li></div>
+            <div><h4>{{b}}</h4></div>
           {% endfor %}
-        </ul>
+        </div>
       </div>
       <div class="vict">
         <h3>+ these dudes</h3>
-        <ul>
+        <div class="victlist">
           {% for v in vict %}
-            <div><li>{{v}}</li></div>
+            <div><h4>{{v}}</h4></div>
           {% endfor %}
-        </ul>
+        </div>
       </div>
+<!-- deckchoice-->
+      <div class="deckchoice">
+      <form name="input" action="/" method="POST">
+      Decks:
+        <select class="choices" name="deckchoice" style="width:350px;" multiple>
+          <optgroup label="Base Sets">
+            <option value="dominion">Dominion</option>
+            <option value="intrigue">Intrigue</option>
+          </optgroup>
+          <optgroup label="Expansions">
+            <option value="seaside">Seaside</option>
+            <option value="Alchemy">Alchemy</option>
+            <option value="Alchemy">Alchemy</option>
+            <option value="Alchemy">Alchemy</option>
+            <option value="Alchemy">Alchemy</option>
+          </optgroup>
+        <input type="submit" value="Submit">
+        </select>
+      </form>
+    </div>
+
   </body>
+  <script type="text/javascript">
+  $(".choices").chosen();
+  </script>
 </html>

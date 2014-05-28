@@ -1,0 +1,9 @@
+{
+	"folders":
+	[
+		{
+			"path": "/Users/Westphalia/dominiongirl/dominion", 
+			"folder_exclude_patterns": ["venv"]
+		}
+	]
+}

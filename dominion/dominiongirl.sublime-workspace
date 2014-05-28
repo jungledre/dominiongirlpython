@@ -1,0 +1,212 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "#!/usr/bin/env python\n\nimport random\n\ndecks = {\n    'dominion' : [\"Cellar\", \"Chapel\", \"Moat\", \"Chancellor\", \"Village\", \"Woodcutter\", \"Workshop\", \"Bureaucrat\", \"Feast\", \"Gardens\", \"Militia\", \"Moneylender\", \"Remodel\", \"Smithy\", \"Spy\", \"Thief\", \"Throne Room\", \"Council Room\", \"Festival\", \"Laboratory\", \"Library\", \"Market\", \"Mine\", \"Witch\", \"Adventurer\"],\n    'intrigue' : [\"Courtyard\", \"Pawn\", \"Secret\", \"Chamber\", \"Great Hall\", \"Masquerade\", \"Shanty Town\", \"Steward\", \"Swindler\", \"Wishing Well\", \"Baron\", \"Bridge\", \"Conspirator\", \"Coppersmith\", \"Ironworks\", \"Mining Village\", \"Scout\", \"Duke\", \"Minion\", \"Saboteur\", \"Torturer\", \"Trading Post\", \"Tribute\", \"Upgrade\", \"Harem\", \"Nobles\"],\n    'seaside' : [\"Embargo\", \"Haven\", \"Lighthouse\", \"Native Village\", \"Pearl Diver\", \"Ambassador\", \"Fishing Village\", \"Lookout\", \"Smugglers\", \"Warehouse\", \"Caravan\", \"Cutpurse\", \"Island\", \"Navigator\", \"Pirate Ship\", \"Salvager\", \"Sea Hag\", \"Treasure Map\", \"Bazaar\", \"Explorer\", \"Ghost Ship\", \"Merchant Ship\", \"Outpost\", \"Tactician\", \"Treasury\", \"Wharf\"],\n    'alchemy' : [\"Vineyard\", \"Alchemist\", \"Possession\", \"Herbalist\",\"Philosopher's Stone\",\"University\", \"Scrying Pool\", \"Transmute\", \"Apothecary\", \"Apprentice\", \"Familiar\", \"Golem\"],\n    'prosperity' : [\"Loan\", \"Trade Route\", \"Watchtower\", \"Bishop\", \"Monument\", \"Quarry\", \"Talisman\", \"Worker's Village\", \"City\", \"Contraband\", \"Counting House\", \"Mint\", \"Mountebank\", \"Rabble\", \"Royal Seal\", \"Vault\", \"Venture\", \"Goons\", \"Grand Market\", \"Hoard\", \"Bank\", \"Expand\", \"Forge\", \"King's Court\", \"Peddler\"],\n    'cornucopia' : [\"Hamlet\", \"Fortune Teller\", \"Menagerie\", \"Farming Village\", \"Horse Traders\", \"Remake\", \"Tournament\", \"Young Witch\", \"Harvest\", \"Horn of Plenty\", \"Hunting Party\", \"Jester\", \"Fairgrounds\"],\n    'hinterlands' : [\"Crossroads\", \"Duchess\", \"Fool's Gold\", \"Develop\", \"Oasis\", \"Oracle\", \"Scheme\", \"Tunnel\", \"Jack of All Trades\", \"Noble Brigand\", \"Nomad Camp\", \"Silk Road\", \"Spice Merchant\", \"Trader\", \"Cache\", \"Cartographer\", \"Embassy\", \"Haggler\", \"Highway\", \"Ill-Gotten Gains\", \"Inn\", \"Mandarin\", \"Margrave\", \"Stables\", \"Border Village\", \"Farmland\"],\n    'darkages' : [\"Madman\", \"Mercenary\", \"Spoils\", \"Poor House\", \"Beggar\", \"Squire\", \"Vagrant\", \"Forager\", \"Hermit\", \"Market Square\", \"Sage\", \"Storeroom\", \"Urchin\", \"Armory\", \"Death Cart\", \"Feodum\", \"Fortress\", \"Ironmonger\", \"Marauder\", \"Procession\", \"Rats\", \"Scavenger\", \"Wandering Minstrel\", \"Band of Misfits\", \"Bandit Camp\", \"Catacombs\", \"Count\", \"Counterfeit\", \"Cultist\", \"Graverobber\", \"Junk Dealer\", \"Mystic\", \"Pillage\", \"Rebuild\", \"Rogue\", \"Altar\", \"Hunting Grounds\"],\n    'guilds' : [\"Candlestick Maker\", \"Stonemason\", \"Doctor\", \"Masterpiece\", \"Advisor\", \"Herald\", \"Plaza\", \"Taxman\", \"Baker\", \"Butcher\", \"Journeyman\", \"Merchant Guild\", \"Soothsayer\"], \n}\n\n#Basic Cards\ncoin = [\"Copper\", \"Silver\", \"Gold\", \"Platinum\"]\nvict = [\"Estate\", \"Duchy\", \"Province\", \"Colony\"]\nother = [\"Curse\", \"Potion\"]\n\n# 10 Cards\ndef give10(*deckname):\n    unshuffled_list = []\n    for deckname in decks:\n        unshuffled_list = unshuffled_list + decks[deckname]\n\n    i = 10\n\n    shuffled_list = []\n    while i > 0:\n        r = random.randint(0, len(unshuffled_list)-1)\n        shuffled_list.append(unshuffled_list[r])\n        del unshuffled_list[r]\n        i -= 1\n        shuffled_list.sort()\n\n    return shuffled_list\n\n# Coin Cards\ndef giveCoin(*deckname):\n    coin_list = coin[0:3]\n    if deckname == 'prosperity':\n        coin_list.append(coin[3])\n    return coin_list\n\n#Victory Cards\ndef giveVict(*deckname):\n    vict_list = vict[0:3]\n    if deckname == 'prosperity':\n        vict_list.append(vict[3])\n    return vict_list\n\nif __name__ == \"__main__\":\n\n    print give10('dominion','seaside')\n    print giveCoin('dominion', 'seaside')\n    print giveVict('dominion', 'seaside')\n",
+			"file": "dominiongirl.py",
+			"file_size": 3725,
+			"file_write_time": 1400975128000000,
+			"settings":
+			{
+				"buffer_size": 3764,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "\nfrom flask import Flask, render_template, url_for\n\nprint \"hi\"\nfrom dominiongirl import give10, giveCoin, giveVict\nprint \"again\"\n\napp = Flask(__name__)\n\n@app.route(\"/\")\ndef hello():\n    # return \"Hello World!\"\n    print ' '.join(give10('seaside'))\n    # return ' '.join(give10('seaside'))\n    print ' '.join(giveCoin('seaside'))\n    print ' '.join(giveVict('seaside'))\n    return render_template(\"index.html\",\n        cards = give10('seaside'), \n        coin = giveCoin('seaside'),\n    	vict = giveVict('seaside'))\n\nif __name__ == \"__main__\":\n    app.debug = True\n    app.run()",
+			"file": "run.py",
+			"file_size": 576,
+			"file_write_time": 1400975128000000,
+			"settings":
+			{
+				"buffer_size": 577,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"env"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "dominiongirl.py",
+					"settings":
+					{
+						"buffer_size": 3764,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2911,
+								2911
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 242.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "run.py",
+					"settings":
+					{
+						"buffer_size": 577,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1,
+								1
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}
