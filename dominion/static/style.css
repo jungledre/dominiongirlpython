@@ -11,7 +11,6 @@ h1 {
 	color: white;
 	font-size: xx-large;
 }
-
 h2 {
 	color: wheat;
 }
@@ -20,11 +19,10 @@ h4 {
 	text-align: top;
 }
 
+div {
+	background-color: mediumorchid
 }
 
-div {
-	background-color: orchid
-}
 .deck {
 	float: left;
 	width: 75%;
@@ -34,8 +32,11 @@ div {
 	float: right;
 	width: 25%;
 }
-
 .coin {
+	float: right;
+	width: 25%;
+}
+.other {
 	float: right;
 	width: 25%;
 }
@@ -68,7 +69,15 @@ div {
 	margin: 5px;
 	border-radius: 5px;
 }
-
+.otherlist div {
+	position: right;
+	background-color: black;
+	display: inline-block;
+	width: 64px;
+	height: 89px;
+	margin: 5px;
+	border-radius: 5px;
+}
 .deckchoice {
 	clear: both;
 }

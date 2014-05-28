@@ -16,7 +16,7 @@ decks = {
 
 #Basic Cards
 coin = ["Copper", "Silver", "Gold", "Platinum"]
-vict = ["Estate", "Duchy", "Province", "Colony"]
+vict = ["Estate", "Duchy", "Province", "Colony","Curse"]
 other = ["Curse", "Potion"]
 
 # 10 Cards
@@ -41,16 +41,23 @@ def give10(decknames):
 # Coin Cards
 def giveCoin(deckname):
     coin_list = coin[0:3]
-    if deckname == 'prosperity':
+    if 'prosperity' in deckname:
         coin_list.append(coin[3])
     return coin_list
 
 #Victory Cards
 def giveVict(deckname):
     vict_list = vict[0:3]
-    if deckname == 'prosperity':
+    if 'prosperity' in deckname:
         vict_list.append(vict[3])
     return vict_list
+
+# def giveOther(shuffled_list):
+#     other_list = other[0]
+#     # if 'witch' in shuffled_list:
+#     #     other_list.append(other[0])
+#     return other_list
+        
 
 if __name__ == "__main__":
 

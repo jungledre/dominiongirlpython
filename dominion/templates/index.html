@@ -10,7 +10,7 @@
   <body>
       <h1>Welcome to (✿◠‿◠) DOMINION GIRL (◕‿◕✿)</h1>
       <div class="deckname"> 
-          <div><h2>Deck: {{deck}}</h2></div>
+          <div><h2>{{request.form}}</h2></div>
       </div>
 <!--deck div -->
       <div class="deck">
@@ -20,9 +20,9 @@
         	{% endfor %}
         </div>
       </div>
-<!--coin cards -->
+<!--supply cards -->
       <div class="coin">
-        <h3>+ these dudes</h3>
+        <h3>Coin Cards</h3>
         <div class="coinlist">
           {% for b in coin %}
             <div><h4>{{b}}</h4></div>
@@ -30,7 +30,7 @@
         </div>
       </div>
       <div class="vict">
-        <h3>+ these dudes</h3>
+        <h3>Victory Cards</h3>
         <div class="victlist">
           {% for v in vict %}
             <div><h4>{{v}}</h4></div>
@@ -48,10 +48,12 @@
           </optgroup>
           <optgroup label="Expansions">
             <option value="seaside">Seaside</option>
-            <option value="Alchemy">Alchemy</option>
-            <option value="Alchemy">Alchemy</option>
-            <option value="Alchemy">Alchemy</option>
-            <option value="Alchemy">Alchemy</option>
+            <option value="alchemy">Alchemy</option>
+            <option value="prosperity">Prosperity</option>
+            <option value="cornucopia">Cornucopia</option>
+            <option value="hinterlands">Hinterlands</option>
+            <option value="darkages">Darkages</option>
+            <option value="guilds">Guilds</option>
           </optgroup>
         <input type="submit" value="Submit">
         </select>

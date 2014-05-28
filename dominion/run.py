@@ -15,13 +15,8 @@ def hello():
         deck = ['dominion']
     elif request.method == 'POST':
         deck = request.form.getlist('deckchoice')
-        print deck
     print request.form
-    # deck=request.form['deckchoice']
-    # print deck
-    # return "Hello World!"
     print ' '.join(give10(deck))
-    # return ' '.join(give10(deck))
     print ' '.join(giveCoin(deck))
     print ' '.join(giveVict(deck))
     return render_template("index.html",
@@ -31,7 +26,7 @@ def hello():
 
 @app.route('/bower_components/<path:filename>')
 def bower_components(filename):
-    print os.path.join(app.root_path, 'bower_components', filename)
+    #print os.path.join(app.root_path, 'bower_components', filename)
     return send_from_directory(os.path.join(app.root_path, 'bower_components'), filename)
 
 if __name__ == "__main__":
