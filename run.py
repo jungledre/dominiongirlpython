@@ -20,9 +20,9 @@ def hello():
     print ' '.join(giveCoin(deck))
     print ' '.join(giveVict(deck))
     return render_template("index.html",
-        cards = give10(deck), 
+        cards = give10(deck),
         coin = giveCoin(deck),
-    	vict = giveVict(deck))
+        vict = giveVict(deck))
 
 @app.route('/bower_components/<path:filename>')
 def bower_components(filename):

@@ -1,83 +1,83 @@
 body {
-	background-color: mediumorchid;
-	font-family: sans-serif;
-	font-color: white;
-	font-size: medium;
-	text-align: center;
-	vertical-align: middle;
+  background-color: mediumorchid;
+  font-family: sans-serif;
+  font-color: white;
+  font-size: medium;
+  text-align: center;
+  vertical-align: middle;
 }
 
 h1 {
-	color: white;
-	font-size: xx-large;
+  color: white;
+  font-size: xx-large;
 }
 h2 {
-	color: wheat;
+  color: wheat;
 }
 h4 {
-	color: white;
-	text-align: top;
+  color: white;
+  text-align: top;
 }
 
 div {
-	background-color: mediumorchid
+  background-color: mediumorchid
 }
 
 .deck {
-	float: left;
-	width: 75%;
-	vertical-align: top;
+  float: left;
+  width: 75%;
+  vertical-align: top;
 }
 .vict {
-	float: right;
-	width: 25%;
+  float: right;
+  width: 25%;
 }
 .coin {
-	float: right;
-	width: 25%;
+  float: right;
+  width: 25%;
 }
 .other {
-	float: right;
-	width: 25%;
+  float: right;
+  width: 25%;
 }
 .decklist div {
-	background-color: tan;
-	text-align: center;
-	display: inline-block;
-	width: 128px;
-	height: 178px;
-	margin: 5px;
-	border-radius: 5px;
+  background-color: tan;
+  text-align: center;
+  display: inline-block;
+  width: 128px;
+  height: 178px;
+  margin: 5px;
+  border-radius: 5px;
 }
 
 .victlist div {
-	position: right;
-	background-color: teal;
-	display: inline-block;
-	width: 64px;
-	height: 89px;
-	margin: 5px;
-	border-radius: 5px;
+  position: right;
+  background-color: teal;
+  display: inline-block;
+  width: 64px;
+  height: 89px;
+  margin: 5px;
+  border-radius: 5px;
 }
 
 .coinlist div {
-	position: right;
-	background-color: gold;
-	display: inline-block;
-	width: 64px;
-	height: 89px;
-	margin: 5px;
-	border-radius: 5px;
+  position: right;
+  background-color: gold;
+  display: inline-block;
+  width: 64px;
+  height: 89px;
+  margin: 5px;
+  border-radius: 5px;
 }
 .otherlist div {
-	position: right;
-	background-color: black;
-	display: inline-block;
-	width: 64px;
-	height: 89px;
-	margin: 5px;
-	border-radius: 5px;
+  position: right;
+  background-color: black;
+  display: inline-block;
+  width: 64px;
+  height: 89px;
+  margin: 5px;
+  border-radius: 5px;
 }
 .deckchoice {
-	clear: both;
+  clear: both;
 }

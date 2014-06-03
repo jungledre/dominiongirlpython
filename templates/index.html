@@ -9,15 +9,15 @@
   </head>
   <body>
       <h1>Welcome to (✿◠‿◠) DOMINION GIRL (◕‿◕✿)</h1>
-      <div class="deckname"> 
+      <div class="deckname">
           <div><h2>{{request.form}}</h2></div>
       </div>
 <!--deck div -->
       <div class="deck">
         <div class="decklist">
-        	{% for c in cards %} 
-        		<div><h4>{{c}}</h4></div>
-        	{% endfor %}
+          {% for c in cards %}
+            <div><h4>{{c}}</h4></div>
+          {% endfor %}
         </div>
       </div>
 <!--supply cards -->
