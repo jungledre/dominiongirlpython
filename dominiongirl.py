@@ -2,7 +2,7 @@
 
 import random
 
-decks = {
+DECKS = {
     'dominion' : ["Cellar", "Chapel", "Moat", "Chancellor", "Village", "Woodcutter", "Workshop", "Bureaucrat", "Feast", "Gardens", "Militia", "Moneylender", "Remodel", "Smithy", "Spy", "Thief", "Throne Room", "Council Room", "Festival", "Laboratory", "Library", "Market", "Mine", "Witch", "Adventurer"],
     'intrigue' : ["Courtyard", "Pawn", "Secret", "Chamber", "Great Hall", "Masquerade", "Shanty Town", "Steward", "Swindler", "Wishing Well", "Baron", "Bridge", "Conspirator", "Coppersmith", "Ironworks", "Mining Village", "Scout", "Duke", "Minion", "Saboteur", "Torturer", "Trading Post", "Tribute", "Upgrade", "Harem", "Nobles"],
     'seaside' : ["Embargo", "Haven", "Lighthouse", "Native Village", "Pearl Diver", "Ambassador", "Fishing Village", "Lookout", "Smugglers", "Warehouse", "Caravan", "Cutpurse", "Island", "Navigator", "Pirate Ship", "Salvager", "Sea Hag", "Treasure Map", "Bazaar", "Explorer", "Ghost Ship", "Merchant Ship", "Outpost", "Tactician", "Treasury", "Wharf"],
@@ -24,7 +24,7 @@ def give10(decknames):
     unshuffled_list = []
 
     for deck in decknames:
-        unshuffled_list = unshuffled_list + decks[deck]
+        unshuffled_list = unshuffled_list + DECKS[deck]
 
     i = 10
 
@@ -39,16 +39,16 @@ def give10(decknames):
     return shuffled_list
 
 # Coin Cards
-def giveCoin(deckname):
+def giveCoin(decknames):
     coin_list = coin[0:3]
-    if 'prosperity' in deckname:
+    if 'prosperity' in decknames:
         coin_list.append(coin[3])
     return coin_list
 
 #Victory Cards
-def giveVict(deckname):
+def giveVict(decknames):
     vict_list = vict[0:3]
-    if 'prosperity' in deckname:
+    if 'prosperity' in decknames:
         vict_list.append(vict[3])
     return vict_list
 

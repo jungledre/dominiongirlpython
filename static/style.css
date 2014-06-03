@@ -27,6 +27,7 @@ div {
   float: left;
   width: 75%;
   vertical-align: top;
+  max-width: 800px;
 }
 .vict {
   float: right;
