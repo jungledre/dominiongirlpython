@@ -9,18 +9,18 @@ app = Flask(__name__)
 @app.route("/", methods=['GET','POST'])
 def hello():
     if request.method == 'GET':
-        decks = ['dominion']
+        DECKS = ['dominion']
     elif request.method == 'POST':
-        decks = request.form.getlist('deckchoice')
+        DECKS = request.form.getlist('deckchoice')
     logging.debug(request.form)
-    logging.debug(' '.join(give10(decks)))
-    logging.debug(' '.join(giveCoin(decks)))
-    logging.debug(' '.join(giveVict(decks)))
+    logging.debug(' '.join(give10(DECKS)))
+    logging.debug(' '.join(giveCoin(DECKS)))
+    logging.debug(' '.join(giveVict(DECKS)))
     return render_template("index.html",
-        cards = give10(deck),
-        coin = giveCoin(deck),
-        vict = giveVict(deck),
-        decks = ', '.join(decks))
+        cards = give10(DECKS),
+        coin = giveCoin(DECKS),
+        vict = giveVict(DECKS),
+        decks = ' + '.join(DECKS))
 
 @app.route('/bower_components/<path:filename>')
 def bower_components(filename):
