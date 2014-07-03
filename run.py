@@ -27,4 +27,8 @@ def bower_components(filename):
     return send_from_directory(os.path.join(app.root_path, 'bower_components'), filename)
 
 if __name__ == "__main__":
-    app.run(debug = True, port=33507, host="0.0.0.0")
+    port = int(os.environ.get('PORT', 5000))
+    if os.path.exists(os.path.join(app.root_path, 'dev.py')):
+        app.run(host="127.0.0.1", port=port, debug=True)
+    else:
+        app.run(host="0.0.0.0", port=port, debug=True)
