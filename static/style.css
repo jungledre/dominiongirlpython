@@ -1,26 +1,26 @@
 body {
-  background-color: mediumorchid;
-  font-family: sans-serif;
-  font-color: white;
+  background-color: #D1C7E5;
+  font-family: 'Walter Turncoat', cursive;
+  font-color: black;
   font-size: medium;
   text-align: center;
   vertical-align: middle;
 }
 
 h1 {
-  color: white;
+  color: black;
   font-size: xx-large;
 }
 h2 {
-  color: wheat;
+  color: black;
 }
 h4 {
-  color: white;
+  color: black;
   text-align: top;
 }
 
 div {
-  background-color: mediumorchid
+  background-color: #D1C7E5
 }
 
 .deck {
@@ -42,33 +42,36 @@ div {
   width: 25%;
 }
 .decklist div {
-  background-color: tan;
+  background-color: white;
   text-align: center;
   display: inline-block;
   width: 128px;
   height: 178px;
   margin: 5px;
   border-radius: 5px;
+  border: 2px solid;
 }
 
 .victlist div {
   position: right;
-  background-color: teal;
+  background-color: white;
   display: inline-block;
   width: 64px;
   height: 89px;
   margin: 5px;
   border-radius: 5px;
+  border: 2px solid;
 }
 
 .coinlist div {
   position: right;
-  background-color: gold;
+  background-color: white;
   display: inline-block;
   width: 64px;
   height: 89px;
   margin: 5px;
   border-radius: 5px;
+  border: 2px solid;
 }
 .otherlist div {
   position: right;
