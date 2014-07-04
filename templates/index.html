@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href='http://fonts.googleapis.com/css?family=Walter+Turncoat' rel='stylesheet' type='text/css'>
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ url_for('bower_components', filename='chosen_v1.1.0/chosen.min.css') }}">
     <title>Dominion Girl</title>
@@ -10,7 +11,7 @@
   <body>
     <h1>Welcome to (✿◠‿◠) DOMINION GIRL (◕‿◕✿)</h1>
     <div class="deckname">
-      <div><h2>{{decks}}</h2></div>
+      <div><h2>Set Selection: {{decks}}</h2></div>
     </div>
     <div class="deck">
       <div class="decklist">
@@ -37,8 +38,8 @@
     </div>
     <div class="deckchoice">
       <form name="input" action="/" method="POST">
-        Decks:
-        <select class="choices" name="deckchoice" style="width:350px;" multiple>
+        Card Sets:
+        <select class="choices" name="deckchoice" style="width:150px;" multiple>
           <optgroup label="Base Sets">
             <option value="dominion">Dominion</option>
             <option value="intrigue">Intrigue</option>
