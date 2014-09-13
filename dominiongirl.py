@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import random
+import random, sqlite3
 
 DECKS = {
     'dominion' : ["Cellar", "Chapel", "Moat", "Chancellor", "Village", "Woodcutter", "Workshop", "Bureaucrat", "Feast", "Gardens", "Militia", "Moneylender", "Remodel", "Smithy", "Spy", "Thief", "Throne Room", "Council Room", "Festival", "Laboratory", "Library", "Market", "Mine", "Witch", "Adventurer"],
@@ -58,9 +58,12 @@ def giveVict(decknames):
 #     #     other_list.append(other[0])
 #     return other_list
 
-
 if __name__ == "__main__":
-
-    print give10('dominion','seaside')
-    print giveCoin('dominion', 'seaside')
-    print giveVict('dominion', 'seaside')
+    connection = sqlite3.connect('/Users/Westphalia/dgcards')
+    list_give10 = give10(['dominion'])
+    for card in list_give10:
+        # print card
+        cursor = connection.execute("SELECT * from tbl_cards JOIN tbl_decks ON tbl_cards.deck = tbl_decks.id where tbl_cards.name = ? ", (card,))
+        print cursor.fetchone()
+    #print giveCoin('dominion', 'seaside')
+    #print giveVict('dominion', 'seaside')
