@@ -13,7 +13,7 @@ def hello():
     elif request.method == 'POST':
         DECKS = request.form.getlist('deckchoice')
     logging.debug(request.form)
-    logging.debug(' '.join(give10(DECKS)))
+    #logging.debug(' '.join(give10(DECKS)))
     logging.debug(' '.join(giveCoin(DECKS)))
     logging.debug(' '.join(giveVict(DECKS)))
     return render_template("index.html",

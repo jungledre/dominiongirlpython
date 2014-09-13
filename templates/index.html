@@ -16,7 +16,13 @@
     <div class="deck">
       <div class="decklist">
         {% for c in cards %}
-          <div><h4>{{c}}</h4></div>
+          <div>
+            <h4>{{c.name}}</h4>
+            <h4>{{c.cost}}</h4>
+            <h4>{{c.deck}}</h4>
+            <h4>{{c.rules}}</h4>
+            <h4>{{c.type}}</h4>
+          </div>
         {% endfor %}
       </div>
     </div>

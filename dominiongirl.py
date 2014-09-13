@@ -22,6 +22,7 @@ other = ["Curse", "Potion"]
 # 10 Cards
 def give10(decknames):
     unshuffled_list = []
+    connection = sqlite3.connect('/Users/Westphalia/dgcards')
 
     for deck in decknames:
         unshuffled_list = unshuffled_list + DECKS[deck]
@@ -29,9 +30,18 @@ def give10(decknames):
     i = 10
 
     shuffled_list = []
+
     while i > 0:
         r = random.randint(0, len(unshuffled_list)-1)
-        shuffled_list.append(unshuffled_list[r])
+        card = unshuffled_list[r]
+
+        cursor = connection.execute("SELECT * from tbl_cards JOIN tbl_decks ON tbl_cards.deck = tbl_decks.id where tbl_cards.name = ? ", (card,))
+        carddata = cursor.fetchone()
+
+        tempdict = {"name": carddata[1], "cost": carddata[3], "deck": carddata[2], "rules": carddata[4], "type": carddata[5]}
+
+
+        shuffled_list.append(tempdict)
         del unshuffled_list[r]
         i -= 1
         shuffled_list.sort()
